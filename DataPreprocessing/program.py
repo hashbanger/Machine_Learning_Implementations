@@ -29,3 +29,9 @@ y = labelencoder_y.fit_transform(y) #encoding the Yes as 1 and No as 0
 #Now Splitting the dataset in test and train
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size = 0.8)
+
+#Now scaling the features (Salary and Age columns)
+from sklearn.preprocessing import StandardScaler
+sc_X=StandardScaler()
+X_train=sc_X.fit_transform(X_train)
+X_test=sc_X.transform(X_test)
