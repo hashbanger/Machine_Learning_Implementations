@@ -1,2 +1,2 @@
 # Machine-Learning-Hands-On
-Implementing basic Machine Learning algorithms using Python.
+Basic implementation of Machine Learning algorithms using Python.
