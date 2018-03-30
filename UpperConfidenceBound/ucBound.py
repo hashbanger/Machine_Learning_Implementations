@@ -34,4 +34,10 @@ for n in range(0,N):
     reward = dataset.values[n, ad]
     sum_of_rewards[ad] = sum_of_rewards[ad] + reward
     total_reward = total_reward + reward
-          
+
+#Visualising the results
+plt.hist(ads_selected)
+plt.xlabel('Ads')
+plt.ylabel('No of Selections')
+plt.grid()
+plt.show()
