@@ -1,0 +1,10 @@
+Thompson Sampling is one of the oldest heuristics for multi-armed bandit problems. It is a randomized algorithm based on Bayesian ideas, and has recently generated significant interest after several studies demonstrated it to have better empirical performance compared to the state-of-the art methods.
+
+In very Simple terms:
+
+It’s called sampling because for each arm, we pick (sample) a random CTR ratio from our current belief of its probability distribution, and then we sort the articles based on the sampled CTR.
+
+Now what is this Probability distribution ?? The probability distribution is just a function that returns the odds of the CTR being any particular value.
+
+And how does it looks like? Well, for a new article, we have no idea what the CTR is. It could be any number from 0 to 1. That’s called a uniform distribution. But every time we show an article, it’s like flipping an unfair coin. We flip it and see the result. Let’s say that if it’s head, we get a click. Every time we toss it and see the result, we can update our belief of the heads probability or article CTR.
+So, what does it mean to use score = beta(clicks + 1, impressions - clicks + 1) ? We are just getting a random CTR, sampled from the beta distribution. We then sort the articles according to this randomised score. Articles that have a good CTR, will be shown (exploited) more often, but we will also explore new items as they come along. It’s amazing how simple it’s and how good the results are.
